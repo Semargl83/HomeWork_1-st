@@ -138,22 +138,28 @@ namespace Start
         }
         static public void Task7()
         {           
-            Console.WriteLine("Введите целое число: ");
-            int number = Int32.Parse(Console.ReadLine());
-
-           for (int i = 2; i <= number / 2; i++)
+             bool prost = true;
+            Console.WriteLine("Введите число: ");
+            int number_2 = int.Parse(Console.ReadLine());
+            if (number_2 > 0)
+            {
+                for (int i = 2; i <= number_2 / 2; i++)
                 {
-                    if (number % i == 0)
+                    if (number_2 % i == 0)
                     {
-                        Console.WriteLine("Число простое\n");
+                        prost = false;
                         break;
-                    }                    
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Число не простое\n");
-                }         
-           
+            }
+            if (prost)
+            {
+                Console.WriteLine("Число простое\n");
+            }
+            else
+            {
+                Console.WriteLine("Число не простое\n");
+            }
         }
     }
 }
